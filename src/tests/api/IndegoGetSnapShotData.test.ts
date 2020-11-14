@@ -5,7 +5,12 @@ import authorization from './helpers';
 import data from './data';
 
 beforeAll(async () => {
+  await mongoose.models.Indego.deleteMany({}).exec();
   await mongoose.models.Indego.create(data.snapShot);
+});
+
+afterAll(async () => {
+  await mongoose.models.Indego.deleteMany({});
 });
 
 describe('Indego get snapshot data', () => {
@@ -18,7 +23,6 @@ describe('Indego get snapshot data', () => {
 
   test('Should return 200', async (done) => {
     const firstsnapShotData = await mongoose.models.Indego.findOne({});
-    // const { kioskId } = firstsnapShotData.stations[0].properties;
     await request(app)
       .get('/api/v1/stations?at=2019-09-01T10:00:00')
       .set('authorization', authorization)

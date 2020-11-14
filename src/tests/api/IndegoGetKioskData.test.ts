@@ -5,7 +5,12 @@ import authorization from './helpers';
 import data from './data';
 
 beforeAll(async () => {
+  await mongoose.models.Indego.deleteMany({}).exec();
   await mongoose.models.Indego.create(data.snapShot);
+});
+
+afterAll(async () => {
+  await mongoose.models.Indego.deleteMany({});
 });
 
 describe('Indego get kiosk data', () => {
