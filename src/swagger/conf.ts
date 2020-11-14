@@ -16,16 +16,6 @@ export default {
   },
   servers: [
     {
-      url: '{protocol}://localhost:3000/api/v1',
-      description: 'Localhost server',
-      variables: {
-        protocol: {
-          enum: ['http'],
-          default: 'http',
-        },
-      },
-    },
-    {
       url: `{protocol}://${config.baseUrl}/api/v1`,
       description: 'Development server',
       variables: {
