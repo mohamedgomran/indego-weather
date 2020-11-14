@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "Indego is Philadelphia's bike-sharing program, with many bike stations in the city.",
   "main": "lib/index.js",
+  "engines": {
+    "node": "12.18.0"
+  },
   "scripts": {
     "build": "tsc",
     "lint": "eslint --ext .ts .",
     "lint:fix": "npm run lint -- --fix",
-    "prestart": "npm run build",
     "start": "node .",
     "start:dev": "nodemon --inspect=0.0.0.0:9229 --watch src --ext .ts -r ts-node/register src",
     "test": "jest --coverage --reporters='default'"
@@ -34,8 +36,8 @@
     "jest-html-reporter": "^3.3.0",
     "nodemon": "^2.0.6",
     "supertest": "^6.0.1",
-    "ts-jest": "^26.4.4",
     "ts-node": "^9.0.0",
+    "ts-jest": "^26.4.4",
     "typescript": "^4.0.5"
   },
   "dependencies": {
