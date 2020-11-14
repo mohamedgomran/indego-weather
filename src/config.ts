@@ -9,7 +9,7 @@ const getEnv = (envName: string, required: Boolean = true) => {
 };
 
 export default {
-  mongoUrl: 'mongodb://localhost:27017/indego' || getEnv('MONGO_URL'),
+  mongoUrl: getEnv('MONGO_URL'),
   port: Number(getEnv('PORT', false)) || 3000,
   baseUrl: getEnv('BASE_URL', false) || 'localhost:3000',
   jwtSecret: getEnv('JWT_SECRET', false) || '7ovQP996cE%VVUzjVw&M4t6#&h0q^',
