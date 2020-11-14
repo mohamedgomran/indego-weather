@@ -4,7 +4,7 @@ module.exports = {
   reporters: [
     'default',
     ['./node_modules/jest-html-reporter', {
-      publicPath: './coverage/html-report',
+      publicPath: './coverage',
       filename: 'report.html',
       pageTitle: 'Test Report'
     }]

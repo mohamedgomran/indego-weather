@@ -5,8 +5,8 @@
 Explore all endpoints from here [demo](https://lit-coast-74701.herokuapp.com/api/v1/explore/) 
 
 * All config varaiables are in config.ts file.
-* All env varialbles are optional MONGO_URL is required.
-* Any env variable can be overidden by passing the env.
+* All env varialbles are optional, only MONGO_URL is required.
+* Any env variable default values can be overidden by passing the env.
 
 To start development server
 ```
@@ -25,3 +25,5 @@ Testing
 $ export MONGO_URL=yourmongoco
 $ npm test
 ```
+
+will generate a coverage report (html) in `coverage` directory
